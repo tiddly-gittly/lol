@@ -1,7 +1,14 @@
-# Multi-tab layout & Grid layout & layout Launcher, for TiddlyWiki5
+# Multi-tab layout & Grid layout & layout Launcher, for TiddlyWiki5 (WIP)
 
 * VSCode style tabs and split screen, each tab is a layout
 * bring Android&iOS style app launcher to tw, as Layout Launcher.
+
+
+Problems encountered:
+
+1. position: fix style make some element leak to cover other layouts, for example, default layout on the middle, will have its sidebar leak to cover the right most layout
+2. need to design a ui to create and delete grid item, while not covering too much of space. For example, use a tab style handle
+3. drag event should be minimized to a handle, for example, to a tab style handle
 
 ## Development
 
