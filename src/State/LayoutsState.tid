@@ -1,0 +1,21 @@
+title: $:/layouts/state
+description: State of layout of layout
+type: application/json
+
+[
+	{
+		"layout": "$:/plugins/linonetwo/tw-calendar/tiddlywiki-ui/PageLayout/CalendarLayout",
+		"w": 4,
+		"h": 12
+	},
+	{
+		"layout": "$:/core/ui/PageTemplate",
+		"w": 4,
+		"h": 12
+	},
+	{
+		"layout": "$:/plugins/linonetwo/lol/tiddlywiki-ui/PageLayout/DefaultEmptyLayout",
+		"w": 4,
+		"h": 12
+	}
+]

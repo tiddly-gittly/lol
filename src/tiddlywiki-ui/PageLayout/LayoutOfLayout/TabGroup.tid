@@ -1,0 +1,20 @@
+title: $:/plugins/linonetwo/lol/tiddlywiki-ui/PageLayout/LayoutOfLayout/TabGroup
+
+<!-- this level is for grid item (or you can call it splited windows) -->
+<$list filter="[[$:/layouts/state]get[text]jsonindexes[]]" variable="gridItemIndex">
+	<$list
+		filter="[[$:/layouts/state]get[text]jsonget<gridItemIndex>,[layout]has[text]] ~[[$:/plugins/linonetwo/lol/tiddlywiki-ui/PageLayout/DefaultEmptyLayout]]"
+		variable="layoutTitle"
+	>
+		<div
+			class="grid-stack-item"
+			gs-w={{{ [[$:/layouts/state]get[text]jsonget<gridItemIndex>,[w]] }}}
+			gs-h={{{ [[$:/layouts/state]get[text]jsonget<gridItemIndex>,[h]] }}}
+		>
+			<div class="grid-stack-item-content">
+				<!-- <<layoutTitle>> -->
+				<$transclude tiddler=<<layoutTitle>> mode="inline"/>
+			</div>
+		</div>
+	</$list>
+</$list>

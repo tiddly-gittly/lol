@@ -26,7 +26,7 @@ class ResizableGridWidget extends Widget {
     parent.appendChild(containerElement);
     this.renderChildren(containerElement, null);
     // init the grid system
-    const grid = GridStack.init({}, containerElement);
+    const grid = GridStack.init({ row: 12, cellHeight: window.innerHeight / 12 }, containerElement);
     this.grid = grid;
   }
 

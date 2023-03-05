@@ -1,6 +1,6 @@
-title: $:/plugins/linonetwo/lol/tiddlywiki-ui/PageLayout/LayoutOfLayout
-name: Layout of Layout
-description: Tabs and grid of layouts, layout of layout
+title: $:/plugins/linonetwo/lol/tiddlywiki-ui/PageLayout/DefaultEmptyLayout
+name: Default Empty Layout
+description: Show some shortcut link to helpful layouts. Serves as 404 when there is no suitable layout to use.
 tags: $:/tags/Layout
 
 \whitespace trim
@@ -22,14 +22,7 @@ tc-page-container tc-page-view-$(storyviewTitle)$ tc-language-$(languageTitle)$ 
 <$navigator story="$:/StoryList" history="$:/HistoryList" openLinkFromInsideRiver={{$:/config/Navigation/openLinkFromInsideRiver}} openLinkFromOutsideRiver={{$:/config/Navigation/openLinkFromOutsideRiver}} relinkOnRename={{$:/config/RelinkOnRename}}>
 
 <main class="tw-layout-of-layout-main-area">
-	<$resizable-grid-widget>
-		<div class="grid-stack-item">
-			<div class="grid-stack-item-content">Item 1</div>
-		</div>
-		<div class="grid-stack-item" gs-w="2">
-			<div class="grid-stack-item-content">Item 2 wider</div>
-		</div>
-	</$resizable-grid-widget>
+	DefaultEmptyLayout
 </main>
 
 </$navigator>
