@@ -1,3 +1,5 @@
+import 'gridstack/dist/gridstack.min.css';
+import { GridStack } from 'gridstack';
 import type { IChangedTiddlers } from 'tiddlywiki';
 import { widget as Widget } from '$:/core/modules/widgets/widget.js';
 

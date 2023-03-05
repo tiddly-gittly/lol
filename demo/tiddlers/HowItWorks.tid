@@ -1,0 +1,52 @@
+created: 20230301144449267
+creator: 林一二
+modified: 20230305051707641
+modifier: 林一二
+tags: Index
+title: HowItWorks
+type: text/vnd.tiddlywiki
+
+!! Tabbed Grid
+
+We use [[gridstack.ts|https://github.com/gridstack/gridstack.js]] as entry point of this plugin. We create a widget with this npm package.
+
+This widget ([[$:/plugins/linonetwo/lol/widgets/tabbed-grid/index.js]]) will create a container div, and all sub-widget will become children of this div, so become a grid.
+
+Each grid should have multiple tabs, and when a tab is selected, the content will load a layout using the technique similar to `$:/core/ui/RootTemplate`:
+
+```
+<-- use list widget to forEach group and forEach tab ->
+<$transclude
+  tiddler={{{ [{$:/layouts/state}jsonget<groupIndex>,[tabs],<tabIndex>,[layout]has[text]] ~[[$:/plugins/linonetwo/lol/default-empty-layout]] }}}
+  mode="inline"
+/>
+```
+
+`$:/layouts/state` is a tiddler for multi-tab UI state's persistence:
+
+```json
+[
+  // this level is for tab-groups (grid item, or you can call it splited windows)
+  {
+    "tabs": [
+      // this level is for a single tab, which content is a layout
+      {
+        "layout": "$:/plugins/linonetwo/tw-calendar/tiddlywiki-ui/PageLayout/CalendarLayout"
+      },
+      {
+        "layout": "$:/core/ui/PageTemplate"
+      }
+    ]
+  },
+  {
+    "tabs": {
+      "layout": "$:/plugins/linonetwo/common-layouts/sidebar"
+    }
+  }
+]
+```
+
+Use a list widget to generate tab-group, inside our `<$tabbed-grid>` widget.
+
+
+<$whiteboard tiddler="HowItWorksDiagram" readonly="yes" height="600px" />

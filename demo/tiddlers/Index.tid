@@ -1,8 +1,12 @@
+created: 20230305051141153
+creator: 林一二
+modified: 20230305051733489
+modifier: 林一二
 title: Index
 type: text/vnd.tiddlywiki
 
 {{$:/snippets/minilanguageswitcher}}
 
-Some readme here.
+<$whiteboard tiddler="HowItLooksLikeDiagram" readonly="yes" height="700px" />
 
-<$example-widget />
+[[HowItWorks]]
