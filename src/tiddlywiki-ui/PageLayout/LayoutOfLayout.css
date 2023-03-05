@@ -1,19 +1,18 @@
-div.tc-page-container.tw-calendar-layout-container {
+div.tc-page-container.tw-layout-of-layout-container {
   margin-top: 0px;
   height: 100vh;
   width: 100%;
 }
-.tw-calendar-layout-main-area {
-  height: 100%;
-  width: 100%;
-}
-
-.tw-calendar-layout-container p {
+.tw-layout-of-layout-container p {
   margin: 0;
   height: 100%;
   width: 100%;
 }
-
-.tc-page-controls svg.tc-image-tmd-calendar-cursor {
-  fill: <<colour toolbar-options-button>>;
+.tw-layout-of-layout-main-area {
+  height: 100%;
+  width: 100%;
+}
+.tw-layout-of-layout-main-area .grid-stack {
+  height: 100%;
+  width: 100%;
 }

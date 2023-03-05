@@ -1,15 +1,16 @@
+/* eslint-disable unicorn/no-null */
 import 'gridstack/dist/gridstack.min.css';
 import { GridStack } from 'gridstack';
 import type { IChangedTiddlers } from 'tiddlywiki';
 import { widget as Widget } from '$:/core/modules/widgets/widget.js';
 
-class ExampleWidget extends Widget {
-  // constructor(parseTreeNode: IParseTreeNode, options?: unknown) {
-  //   super(parseTreeNode, options);
-  // }
+class ResizableGridWidget extends Widget {
+  grid?: GridStack;
 
-  refresh(_changedTiddlers: IChangedTiddlers): boolean {
-    return false;
+  refresh(changedTiddlers: IChangedTiddlers): boolean {
+    // TODO: refresh when layouts/state changes
+    // only refresh on layout change
+    return changedTiddlers['$:/layout'] !== undefined;
   }
 
   /**
@@ -21,12 +22,18 @@ class ExampleWidget extends Widget {
     this.execute();
 
     const containerElement = document.createElement('div');
-    containerElement.textContent = 'Hello world!';
     this.domNodes.push(containerElement);
-    // eslint-disable-next-line unicorn/prefer-dom-node-append
     parent.appendChild(containerElement);
+    this.renderChildren(containerElement, null);
+    // init the grid system
+    const grid = GridStack.init({}, containerElement);
+    this.grid = grid;
+  }
+
+  removeChildDomNodes(): void {
+    this.grid?.destroy();
   }
 }
 
 declare const exports: Record<string, typeof Widget>;
-exports['example-widget'] = ExampleWidget;
+exports['resizable-grid-widget'] = ResizableGridWidget;

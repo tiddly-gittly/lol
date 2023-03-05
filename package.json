@@ -1,7 +1,7 @@
 {
   "url": "https://github.com/tiddly-gittly/tw-example-plugin",
   "tsFiles": [
-    "src/widgets/tabbed-grid/index.ts"
+    "src/widgets/resizable-grid/index.ts"
   ],
   "ignoredExtensionsWhenBuildPlugin": [
     ".ts",
